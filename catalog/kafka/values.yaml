@@ -1,0 +1,28 @@
+#------------------------------------------------------------------------------
+# Kafka:
+#------------------------------------------------------------------------------
+
+Replicas: 3
+Image: "solsson/kafka"
+ImageTag: "0.11.0.0"
+ImagePullPolicy: "IfNotPresent"
+resources:
+  limits:
+    cpu: 200m
+    memory: 1536Mi
+  requests:
+    cpu: 100m
+    memory: 1024Mi
+Storage: "1Gi"
+DataDirectory: "/opt/kafka/data"
+
+#------------------------------------------------------------------------------
+# Zookeeper:
+#------------------------------------------------------------------------------
+
+#serverhost: the exist zookeeper client serverice name in k8s, if kakfa and zk not in the same namespace,then add namespace 
+#serverport: the exist zookeeper client service port
+
+zookeeper:
+  serverhost: myzk-zookeeper
+  serverport: 2181

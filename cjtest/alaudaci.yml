@@ -1,0 +1,7 @@
+pre_ci_boot:
+    image: 10.0.128.164:30500/helloworld
+    tag: latest
+
+ci:
+    - echo "<h1>hello yaml !</h1>" > aayml.txt
+    - sleep 2
